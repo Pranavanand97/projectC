@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Jobs</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    img {
+      filter:
+        sepia(1) hue-rotate(190deg) opacity(.46) grayscale(.7)
+    }
+ 
+    .has-mask {
+      position: relative;
+      clip: rect(10px, 150px, 130px, 10px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container w-full max-w-7xl bg-white ">
+    <!--fixed inset-x-0 navbar-inverse-->
+    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl p-5
+  mx-auto
+  md:items-center md:justify-between md:flex-row md:px-6 z-10
+  lg:px-8 
+  ">
+
+      <div class="flex flex-row items-center justify-between lg:justify-start z-10">
+        <a href="https://pranavanand97.github.io/projectC/index.html" class="
+      text-4xl
+      font-bold
+      tracking-tighter
+      text-blue-600
+      transition
+      duration-500
+      ease-in-out
+      transform
+      tracking-relaxed
+      lg:pr-3
+      z-50
+    "> WeCanGrowYou </a>
+        <button class=" z-50 rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd" style="display: none"></path>
+          </svg>
+        </button>
+      </div>
+      <nav :class="{'flex': open, 'hidden': !open} "
+        class="z-50 flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
+        <a class=" z-50
+        font-semibold
+      px-4
+      py-2
+      mt-2
+      text-sm text-gray-500
+      md:mt-0
+      hover:text-blue-600
+      focus:outline-none focus:shadow-outline
+    " href="#">About</a>
+        <a class="
+        z-50
+        font-semibold
+      px-4
+      py-2
+      mt-2
+      text-sm text-gray-500
+      md:mt-0
+      hover:text-blue-600
+      focus:outline-none focus:shadow-outline
+    " href="https://pranavanand97.github.io/projectC/contactUs.html">Contact Us</a>
+        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+          <button @click="open = !open" class="z-50
+          font-semibold
+        flex flex-row
+        items-center
+        w-full
+        px-4
+        py-2
+        mt-2
+        text-sm text-left text-gray-500
+        md:w-auto md:inline md:mt-0
+        hover:text-blue-600
+        focus:outline-none focus:shadow-outline 
+      ">
+            <span>What we do? </span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+              class="z-50 inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="open" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="z-50
+        absolute
+        right-0
+        z-9999
+        w-full
+        mt-2
+        origin-top-right
+        rounded-md
+        shadow-lg
+        md:w-60
+      " style="display: none">
+            <div class="px-2 py-2 bg-white rounded-md shadow">
+              <a class="z-50
+            block
+            px-4
+            py-2
+            mt-2
+            text-sm text-gray-500
+            md:mt-0
+            hover:text-blue-600
+            focus:outline-none focus:shadow-outline
+          " href="https://pranavanand97.github.io/projectC/ViewJobs.html">We'll help you find a Job</a>
+              <a class="z-50
+            block
+            px-4
+            py-2
+            mt-2
+            text-sm text-gray-500
+            md:mt-0
+            hover:text-blue-600
+            focus:outline-none focus:shadow-outline
+          " href="#">We'll help you build a Startup</a>
+              <a class="z-50
+            block
+            px-4
+            py-2
+            mt-2
+            text-sm text-gray-500
+            md:mt-0
+            hover:text-blue-600
+            focus:outline-none focus:shadow-outline
+          " href="https://pranavanand97.github.io/projectC/ViewJobs.html">We'll help grab your dreams.</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+          <a class="
+        font-medium
+      px-4
+      py-2
+      mt-2
+      text-sm text-gray-300
+      md:mt-0
+      hover:text-blue-600
+      focus:outline-none focus:shadow-outline">Login as </a>
+
+
+          <a href="https://pranavanand97.github.io/projectC/StudentLogin.html">
+            <button class="
+        items-center
+        block
+        px-10
+        py-2.5
+        text-base
+        font-medium
+        text-center text-blue-600
+        transition
+        duration-500
+        ease-in-out
+        transform
+        border-2 border-white
+        shadow-md
+        rounded-xl
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-gray-500
+      "> Student </button></a>
+
+          <a href="https://pranavanand97.github.io/projectC/EmployerLogin.html">
+            <button class="
+        items-center
+        block
+        px-10
+        py-3
+        text-base
+        font-medium
+        text-center text-white
+        transition
+        duration-500
+        ease-in-out
+        transform
+        bg-blue-600
+        rounded-xl
+        hover:bg-blue-700
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-blue-500
+      "> Employer </button></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- the nav Bar ends Here-->
+
+ <!-- the Body Starts Here-->
+
+  <section class="w-full items-center bg-white dark:bg-wickeddark">
+    <div class="
+      relative
+      items-center
+      w-full
+      px-5
+      py-10
+      mx-auto
+      md:px-12
+      lg:px-16
+      max-w-7xl
+      lg:py-15
+      ">
+      <div class="flex w-full mx-auto text-left">
+        <div class="relative inline-flex items-center mx-auto align-middle">
+          <div class="pb-12 text-center">
+            <h1 class="
+            max-w-5xl
+            text-2xl
+            font-bold
+            leading-none
+            tracking-tighter
+            text-neutral-600
+            md:text-5xl
+            lg:text-6xl lg:max-w-7xl
+          "> Date your dream job here </h1>
+
+            <div class="flex object-center mt-8 mr-4 ml-40 mb-8 space-x-8 bg-transparent rounded-xl ">
+              <div class="flex bg-gray-100 p-3 w-76 space-x-4 rounded-lg items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-8 opacity-30" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input class="bg-gray-100 outline-none" type="text" placeholder="Peek into available jobs..." />
+                <button class="
+              items-center
+              block
+              px-4
+              py-2.5
+              text-base
+              font-medium
+              bg-red-600
+              text-center text-white
+              transition
+              duration-500
+              ease-in-out
+              transform
+              shadow-lg
+              rounded-lg
+              focus:outline-none
+              focus:ring-2
+              focus:ring-offset-2
+              focus:ring-gray-500
+              "> Search </button>
+              </div>
+            </div>
+
+            <div class="container p-0 py-8 mx-auto">
+              <div class="flex flex-wrap -m-4 text-center">
+                <div class="p-0 sm:w-1/4 w-1/2">
+                  <h1 class="title-font text-2xl
+                    font-bold sm:text-4xl text-3xl text-gray-500">12.7K</h1>
+                  <p class="leading-relaxed">Openings</p>
+                </div>
+                <div class="p-0 sm:w-1/4 w-1/2">
+                  <h2 class="title-font text-2xl
+                    font-bold sm:text-4xl text-3xl text-gray-500">1.8K</h2>
+                  <p class="leading-relaxed">Companies</p>
+                </div>
+                <div class="p-0 sm:w-1/4 w-1/2">
+                  <h2 class="title-font text-2xl
+                    font-bold sm:text-4xl text-3xl text-gray-500">35</h2>
+                  <p class="leading-relaxed">Countries</p>
+                </div>
+                <div class="p-0 sm:w-1/4 w-1/2">
+                  <h2 class="title-font text-2xl
+                    font-bold sm:text-4xl text-3xl text-gray-500">43</h2>
+                  <p class="leading-relaxed">From F-500 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<h4 class="justify-center text-xl text-bold text-center text-gray-300"> Explore Featured Jobs</h4>
+
+<!--Experiment for MOdal for Call Back and Appoinment-->
+<!-- Modal toggle -->
+<!-- Main modal -->
+<div id="resumeUpload-modal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
+  <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div class="flex justify-end p-2">
+              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="resumeUpload-modal">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+              </button>
+          </div>
+          <form  id="job-form" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="" autocomplete="off">
+              <h3 class="text-xl font-medium text-center text-gray-900 dark:text-white">Apply using Resume Link</h3>
+              <div>
+                  <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Name</label>
+                  <input type="text" name="Name" id="Name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="My name is Khan" required>
+              </div>
+              <div>
+                <label for="jobId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Job ID</label>
+                <input type="tel" name="jobId" id="jobId"  placeholder="10001" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+            </div>
+              <div>
+                  <label for="link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Resume Link</label>
+                  <input type="text" name="link" id="link"  placeholder="www.linkedin.com/khan_resume" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+              </div>
+              
+              <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> Apply </button>
+              
+          </form>
+      </div>
+  </div>
+</div> 
+
+<!--Experiment-->
+
+<!-- Modal-->
+
+
+
+
+    <!--Job Card-->
+    <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABTVBMVEX////qQzU0qFNChfT7vAXe6P0vfPMoevP3+f7pOyv7uQD7uADsWU7/vQDqPzDqQTPpOCcmpUo3gPQlpEnpLhrpMyHoKBD8wwA8gvT+9vU3qVUYokJDg/s0qUwQoT786ej1sq7zn5rpODf93Zz/+e7914pftnTt9u/g7+Mzqz+PyZz51tTwg3zrUUXrSTzzpqHxkYvudm78zWX+7MqrxPmu17eh0azS6NdAiuJErV/o9OvtZ173wr/62Nb3x8TwiIL+9OD8yVT94Kb8x0v+6sX95LOkwPn936K4zfoNplfM2/u+3sVNi/STtPh1v4Z3v4c3oX7tZFr6wmDsUijwdCn1lR3803vuZC3yhiP3pBbtVyIMcfP7wzZzofbT4PxeqUHcuB6wszJ5rUTGtSmTsDzauB9pmvZ/qPd6qOs/jdU7l649ksI5nJc2pGxTsmpdPQIaAAALTklEQVR4nO2ca3faVhaGhUJMZGwJGUkx0ACeptjBgCENMNixk3bSTBISGM+lM50mmVunmUuH//9xhCRAd87WuUmsvl+6mrWcoyd7n/3uc7MgsFDj/GnzpN8ZXB10e7lcrtfrHlwNOv2T5tPzRoXJF1BT5bzZv5IMTddLJUmWZUVRTMKc+R/zfySppOuaod92Lm4avL80gSrnFwNJ000wCypaimySatpt/2mGMCs3/a6hl7ax+Th1Te5kgrJxcWvokowO58KUdKPXP+dNEKvrvqKVEtG5KLXODW+OCDVOZE0CZGYsZPoiWWl2ieCtIDX5JFVz8rpj4CVnCGTJuEpNtj490CSyeLZkrdfkzbZUU9YJh28jRdcvePNd6CVisy+UsaSd7DKfw8gtjs0SfT6bsdTkwXfT05nwWYx6l7lBNq40ZnxLycaA7ULrxKBWP6MkaU12fOdKiTVfbpmqB6zanI7BNEE3kg0mVfWmRKWBQZN+S382PuMVQFuy9pQuX6PHYwa6pWgdmoBN9iU0qFKXXsHpaLzpLMkapWVVo8s7Q1dS6NTUcy0FGboSjcnY5FtD/Srdkgbsp2MKbiT1yDrjQOdNFJBcIllSb9NSY9wqHZAD7HLs0yIlkQOs9HYeMEUusRZJwNyuA+56BIXurgMe7HiREQZp9EGSgM/S18mQBbxIWy+6FEnAG4M3TYhIAjbStVyyRRJQyO064BVpn1Csa1CWJEmGXLahA3hCsIwqy1tPhnQweNY/uTB10n82uJWN5Y0pECdRwHNSVWZ5C0gJv7nWuGl2rLtTPAAFMhdH5JLW69/E7jZUbk4O0O5xkAUcEJiESsk4aCJtNFSaV9shyQI28a1e1noXgH0U68IRO8AK9vGuZAzAp9LXHSOakSygcIu5YioZ/UTbYJV+FCNhQMwclYx+4p3MCEbCgHg5KhsdrJ3axiDYLBIGxKqjinaLvU17nvMtSkkD4ni9pBM5oO17wkgaUOglzlFFI3Xl5Tq3ySPigBeJ+1GiJ+yDVbUjDpi8zBA+e3YO84gDCv2kZUZ7RvhLrpe3VskDNhKWGcVokv4UoZGTyQMKnWQhVDQqNwe75AEThlCW6Fz/qJC///Tb3/0iCWAuMw/Qnhfv/x6OKBM+UKepx/v5+3+AImYJ8GExn8/fLwIBlewACt/u5y39ERBGRU/V250tKtqA+ft/QkZUjGveXw3Q504ITcTvUAmN1LxMQlHepSKabehcn7NA9aLoRkSyDWnA+6NB+irvEYJtKDLvbwbpYTHvQyzmtjBmqsq468xG8baRrUnorTPrMMbZhtzl/ckwPfcnqWMb0St+I0tWb+qLkCSNtY1Sn/cnAxXOF20bisT7i4H6MjRJbcRQ26D9coW4opLUQgyxDZn8/gJlRfNZCtgGnX0ZigqvpK4w+mxDvuL9xVB9HZOkNqJ3taFlq5sRAj1pmPZdtiETf81BXVuS1A7jxjZoPayipxivcCOubEPp8f5gsMK67jBExzb4PP/HEsI0dGTZhsb7e+FCC6EVRtM2JKqvVKlomxt6EL/L6Vlze0H4Bj2Gpvb/zPt74YprSkP0Le/vhetXIMDil7y/Fy5YCIu4w91lptWIgV22eD3GBLz3/R4rrYZE62hW2v8al7Bwh5EK95whYaW0+DwzhHurNIWV0n1MQIaER2+cIR+DCHGnIUvCJ86Q70Eh/DxDhO+cIWHT8EV2CI8/OEOCSmnxYXYI77y1R4TZIbbfsyQ8skeErCzy+fdZIizYI8IMH7uUsiTcsy3/BaTS7H+RKULb8kEtzf6vM0X40Rpx626wh/CbLBE6TQ3iRpstfDtkGsNXCQjxl78sY2gTghpv7JUFW8InO0/48mfCnwlTT2gvn3a5liYhzJQfOoS73NPY83CH+1KHcIfXFg4haH24n6n1odPT7PAa3+lLYfs02BvCHAh3eK9tz9n0hu2XYls++zU+cM8b2y7Y79PAzi3wiynL3UTneA14jJ8lQmdI4PkhbqlhSHjsDAk8A8btTBmezDjnFlBDxD7HZ3/2BLyLgev5HM4PGd+n4XAGDD3Ix7wTxeEcH1ZMD/N/yQrh+i4GaHVx+FexNsYj/L6QXEcQwsJmUPQYHv7ttajOsQix9ASEuPk51DvCh4d/fy2KYo0f4YdjdL6NWSBvtx2+r4pLlYfcCPcAEXT2MCyhdTWH/3gt2qryArwLInzj+kkEwsPDH1aAuLUmuUDTcFNKBZSJaJrEGlAUW5wIfwRMw9VdE1tbd4UP/ym6xSmIICs9/tH9o9sccWkSHvEJIihJ3YVG2PL+0DEJ/kF8C0nSvTeen41rTc02JqgFB8C7oH5vfUPYVoxfbEzCE8Qpe8J3kBCuru2tFZ2hP4QBiqLKHBDWsm8Wh44i0tRrEh7CNmvCl6Ce1DcNo6qpzyQ8qp8xJoT0M56FhaNQQL9JeDRhCwgLodcNLQW77xCT8Kg8YgkIXDhvdjDWCuy4hZqEN09ZmuInUCG9U7gb/Ct8vWm4SfjEDvAjcO/D7xVLeX5PVKRJeKSya97ewgB9LZsjJJPwqsZqKr4DlZnwJHXXmjiT8KrOprWB5mhokgqbdXC8SfgQWbjiPWAEwyqpJfv3Jm4zCZ/Kp/QJQQvfpXxd91qWYWw3Cb+oI36ChjDE7h093kczCa9o70u9hLVrdzZ3MIJ6XkQyCZ9Uuoiv4KcAR9F/22M0kwhEkWKiJgH0L5xcOqsnATTDeJkiwMg6Y2mmJkOktW+TBNC9mx/UacIginUqO/3vkpzEFT7G/p3thEEUaxROpD6Aq+idOKtwVEtIKJYnhOvNvbdQH7QU2L7wa1ROikh4/+3VHrSTsUMY0ZK6VE1MKNZmxPge/ivhYfjWEArCOHGemq5RI1Rwpqr6788ohTC5Y9hhXBBYbFy2zH/lR/9JgogQQtMxMIJoqj7HrDinbduyHv3mGDwTtxZSW0M8RLXexmA8bddWOfRg8ktoGMPX9kG1sAhxGC83fEs9+i8M8fgT6r8jXhAtxlmCPm7aqvtqwKOfQIixHalHmHlqMdaqI1Agz9pqyKgP/gc4NIzavAhTC6eeriHriyHiomPcFmvhQz54gGwbSE6xFglCU+VatT3dEsrxqFWLwLOEbBuoZcYZNukiIyC1XBNno2mYTZ5NR/NJPY7ORkSzjbiFb5hG+FPRRWli1tXFbN4eWWq3561JuVYrq0i5gmgbMEBCU9EPuhHsJxFsA5ajlogD4mirbYSfVMTrkthUJKEttoHYrvk0TRdirG3sIXu9R0SrDb5ibKOAsqQI0zz5gp+GIm0DahQuUSioOHpQDbWNo0ST0NEiXYihtgHr1gKapA0xaBtHyarMWhg7U1QUsI0EVu/VaeoQvbaRuIy6EVOWqB7bKESeFUKUPsS1bRQAi944pa3crG2jkKAbDdciXdYvOrZBDlAQZulD/OkzUilqq52uHlVc2gaRIrPRMFUrDZHGfSycIxsKonGwfpqikqpSuv8xS0sYy9TufaZkMtYpPhS4TEN/Q/k5y5x3GIlfiQhoDN3sJCuaGboWxzCqIpsHAmORUxNXZ/dSvs0jjOUqyxce1n0JplKZvQxYaVplmqr1GYMb5X4NVWaMtQWnF/KjMhPG2oTDk1WGjLUqR76l6OaqyjV+K00nW8/ik/LVW7x+Q4VP43mdQiDL5Ta1K/IJNCQcyHK9lYL09Oos8tpPArzJkIP9ISj6bhO61HJ9MUpTdvp1NlrUy0kp1XKtPN92iSoNGreXV52AmCadOhuyfuWPofFopi5vPSGxlWu1Vnua5tSM0Ol42G6pdRO0HLwGZf7JkqwuttrDcQbh3LocT4ej9nzWWkyqVVGsVieLVmvebo+G0zHtOfd/FjbfLjzFQ/AAAAAASUVORK5CYII="
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">UI/UX Designer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 10001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Google LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Cochin, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 05/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">31 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Java Developer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 20001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Apple Inc.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Kottayam, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Full
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 18/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">359 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+    
+    <!--Job Card-->
+    <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Sr. Linux Admin &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 30001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Netflix Corp.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Pala, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 25/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">01 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">DevOps Engineer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 40001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Meta LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Westhill, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Part
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 28/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">103 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+     <!--Job Card-->
+     <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">UI/UX Designer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 10001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Google LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Cochin, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 05/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">31 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEX///+qqqqmpqakpKT7+/vU1NSrq6v19fXu7u6zs7PLy8u3t7f4+PjZ2dnr6+vl5eXf39++vr7FxcXPz8/IyMjkRc/eAAAGa0lEQVR4nO2d6XbrIAyEC17xEm95/2e9dpI2dWyTpQyaw+X73xxNAUkIYb6+IpFIJBKJRCKRyP9JU3altA04ynY0SieVtB0gTpXRWi2M0qYgaNpveWEqLCr1I29mkLbHNem00hfeGLb5Wl9oCsv6UZ/SQfnSbKNvVphJW+WOZtgRqHQvbZczTpsVeFV4kjbMFf2uvllhKm2ZI9oDgSqXtswRez4mqGBxOIKhOJqjNTiTFNLGuaA8FqiMtHEuSPNjgXqSts4Fu4H+W2EIO/xjLxPIJC1sAnUrbZ4DBotApaStc0BnHcIQ/IzFj84KG2nz/o7VzQSx+bUuQhXAtsI+hCE4UusqDCEW2h1pCJt7WywMIlI0oedrdj8TxL7QMkl1J22cE46HMJAy8Om4OBNCMvNlqa+FIvBwGQYj8CihCWQNzqQHkzSMAulCkewNoAmh9HRjz5WGswQXtmm3NiEk23ceFeo8GBdzY61Q51MAO/o1vxRqXffB6fv6KpOrOK3qLCAH+ovG1HU9nNtTACXDyBFpUxQN6Qg3Zde3WZb1XfmRhU2XjbVZFqlWuamHimkuF3015PqOMmP7VkUi7c5G63WwXH7InHuCysZp2hh3sc9UL2YrTT+o7Q/cg0omKrKYjMW4vHoeErpB2YpTl98ZxPYe3XAo72cEWltYL6v9tq/N7+SZRHbQ1Xt7oY1xajyarX395B+0+hnvGezpJX1X60y79Ypl9Wx2Pv5K7nWupuPL+i7W6WFVDG1ak7ynbyEZ/Pmc/s3/v7rM1pvnL7M3ZufDj/gaxvcG8G5fMkdyoz4YvR8SL019pfmDiX9FG/xMtR4A+gC97co+m6EOAR+jTuICwRIr6Sl6AdjbN1EIVLiz1OPObN+AzsMtjcu+0ZDbbbbGZe8gTqtsjcsCJO69ja1x2T+AMbS2ifgGcSBnbVz2jUbk37W0ql9AzsSJAgWos0ha1W8gWSlNtqZAAq0NhX4B7Ss4dhQLoO6+oy4Y/6DawGm2FPqMEWjvPfdJDRLIEwtR+16WdAZ2F4MmI4V90oXGz8BKwSSTFHcXg2WS5rAjUpKdL7CL2H6j1Ru4ISTZNwHbbEuCc4oZjTtTI1mGwM+bjdLaLiBPt420uCu4DjeSrSFwknI4GuSVGo6dE/LQl6PIBgz3JK4Utbdf4NhYINuEKIIF9O4eRREKeQU6lRZ3AelKOba/yE9jkSgENutxtF9AFVIkbcC8+z8Yw+NPIPgkKvwLJLMUGA85PA0ypyEZQ+AHwEgiPvDzURwKkWUakjYT5BeypLXdAIYLiv0h1JlyVDGQrobkbA1YijpzuBpg3kbSpgCM+Rw1b+Q05UhMkaUakpCP69ljCYgKWMngCIjIkMjTHowaRBZnius3YXGmOHfKcXJxARUTWVwNLrHhcTWoeUrjahRqr09SqrkAuZVHlNUoVNznaMe4AfE2TAsR08PHtBAVRiJFx8mdxP1E5ej8uuM+Q+U4RPyFHlz3uUkr2qBzxyeKVPHiiuPAKP5lqB0cfyWbUOGSwjksExNOU7V8yK9yppFxmi5od+FfWsoRibPFSLQNXuHuaWSeetQKl9kNWW56w+WXlEgueD3gsqpBcjtojdsO95FQotsHPTn6v9Y4biTiqQx/4y4YXuHLa5xXT9kChvuyG13AcC2QqzSMKQ6T9NbcgLz9zDSImCNhpkHE9IERfcEU1V/D405hL7CzxERcdw3NORTucjdHdoq8gMGxxYC+bs3QNIx9/JkhYgAvmCzIOxvkZb0L0u37+LeDC2GFyI9k3JCdp/A5uiD5/Xk/71s3gv7UwxxdkKtKeZmjC1JxH5muPSCzycC8TLKPTH6a+3yYVKKigc1HN/gPGb6fmU+9L0VPgeKO96Xo/0lZv9mb50V4xWdbpp9sbYO/g2Hg/UM7tSeJPkP9Gk8OVXt3o3eadyXeniZ/U6DEg853ia+auzy5PoxTNjOdB3P82DiXwHmivrIWtc7HvlwZmpbt8NKj3HJr8IenHvXwIfm0G58+new7V9vFmoU/Plj9QNM+meZiD8evOB1aqfPpabJleYNee3yJ+wnTnpFam/YlJ1FWuytSG44BvFI8rqjZuZxfb1pK+3rz9zWTvoVieTJdX42bA8O5e9PHF/1obuFy/vt6Qj9O/RFFl411PUzt6cNyQ1N2fdv2XSkbASORSCQSiUQivvkHlmZr7bt6tBgAAAAASUVORK5CYII="
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Java Developer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 20001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Apple Inc.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Kottayam, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Full
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 18/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">359 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+    
+    <!--Job Card-->
+    <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Sr. Linux Admin &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 30001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Netflix Corp.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Pala, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 25/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">01 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEUYd/L///8Kc/JhnPUAcfL5/P8TdfIsgvOcvvgAb/EAbfGTuPjh7P0AdPKqyPnr8/7J3PuArveLtfd2p/aHsvfw9v7D2PuxzPoce/Ln8P2mxflpoPZBi/ROkvTu9f6/1vtNkfQlfvNbmPXY5fzQ4fw4hvNxpPZ6qvZ9JHyoAAAF/UlEQVR4nO3da3eqOhAGYBpDbHIKgkoRq261l/3//+HRdVYFgXCbgSSceb+38KxIQJlJvJe5xzN9AqOHhO6HhO6HhO6nkzCLwvVmYVd+tvv3NxThKv24cMU5sy5cyd0izGDCJD0qyTx7c2MewmSwcLX2VGDa0Bohg7hpIPXCZC256bPvFsFVrB9HrTDdcWH61LuHe2FP4emqTJ90z6jjqo8w8myeXurDgj/dhXvl0Ac0j3rtKoxd+4T+Rv3tJnQWeCNuuggdBtaOYkX46jKw7losC9/dBt6I5Rm1JFw5OYk+JVg1Co/u3QfLYccmYej6Z/QeFeqFiemTQ0qiFcaOfJloCY91wmwOn9F7VKYRzmQIb5NNXC9MAvdvFf9FBEmtMJSmzwwtMqwVHuYyhLdBPNQJZzPP3FOYa3JhOJd55h4e1ggX7j+w5WGLGuHO9FmhZlcVvs1nJr1HvlWEzn8xfI56rwj3c5poblPNviLczmmiuU0124rwZ2bCn4pwVjeL4u2ChK6GhO6HhO6HhO6HhO7HFqEIfku4gkAID/GnMOPCG00qtjscF3/v2Syu58PSC6RSkrM7FhrDQqbYeZt+nvyXp/jJ2+d7+rq5LplSwHolg0LB1C6OSrZy/CwKzyCiMaHg/CNq1v3mH9CPDqaEXK41tVnzEAayoYRwDkJ16FS17KxQ1FedzUcYeF/9gK4J2bLzDOOmkB1aboCuC9l3f6BTQrHrcZNwUSh4r7uEg0KVDgE6JGQfg4AOCb0hF6FLQqVt9ZiJUCwHAp0RVoqS5yYU30OBrgjl0KvQGWEw4HHNKSGr6WGZl1B1/NXJWaEQw4FuCIc+sLkj5H1mUv/0VkwWg05oIqHq+rUpC38OXiCfAusin0i463aviK5KMtQ3T1MJg3MX3+o6RtP/NEJW17RazpcY5VFjGmFeAdkAHKmpehphXsWqzQn36sszkfCzVThav+NEwtbfuaPRSq8nErbeLI6jLZ0ykbANuBqvtnwaoWwTpuN1QEwiFEGbcDPem4RphKxNCCu3aIwlwhEbkSwRjriKkR1Cf8Q2HRKihIQkBIWEKCEhCUEhIUpISEJQSIgSEpIQFBL2i9CkXaj7SwHu7UIVLnW5tAkv2j9dLoG/UiEKxUh7DwDX5UIVDi97aopNYziKEPpKw35hBHylYb8Quraa/ULokkf2C6/Ad6f2C7+Bt3zrhT50pVHrhZ/QEgbrhX9mL3yFfu2wXgh+w2+9ELwervVCm74fjiJcgavBbBd+zV6Ygn/BsV0IX2rUduECXLNouxD63G290IfXRlsu/IRXZVouBD93Wy8EP3dbL0SorLVceIYXuFsuRKistfu9xQmhwB313dOrNi0SX/NnGMvDowq5Lm39Fr6StX+H8a6W3gGjhIQkBIWEKCEhCUEhIUpISEJQSIgSEpIQFBKihIQkBIWEKCEhCUEhIUpISEJQSIgSEpIQFBKihIQkBOV/KcRfw9Cs8LGi/0O4Rj+cUSFfV4TQps1qzAofy8E/hPgL3hoV5rsyPITZzMYwqwhfLtgHMSq8PI6SCz+wJ1OTwsK+E7kQfVFfk0KZ7/WWC+HdVKWYFBaWEi/Uv2Ivrm1QWNyVoSBMkQfRoLC4IWFBmCAfxuSntLBfX7FKG/nBzZwwf2QrCVcSdW1mY0Ihi1sWPFXa4w6iMaHcFo/yJExQlxA39yl92jXzuVsCdTo1JSzt7FrqB8H8pm9IyK7PRykJE8R9X0yN4alR+BLhzadmhJXt+ipdS3u0S9GIUFV2YKr2ZW2xiCaEKq4cpabzLEYiGhDWAOuEt1FEuRanF9YBa4Uve5TpZnKhqm0HrO+PjDyE++LEQibqN0HTdIAmC/jFOK1QHTU7hGl7XNMddBeYKYXc024Iqu/i9dcSdgaTCQVXsX6L+qY+5dPag2wvOZFQyCDOGo7S3ImdpEclh046UwgZV4dQP37twltW6ceFK85Z/7Ttu+arAf80D1dytwibhq+b8J4sCtebRf+0Ca8D/udvfrb7906b8Y60zrFFIaH7IaH7IaH7mb/wX6l+duaRVpjYAAAAAElFTkSuQmCC"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">DevOps Engineer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 40001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Meta LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Westhill, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Part
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 28/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">103 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+     <!--Job Card-->
+     <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABTVBMVEX////qQzU0qFNChfT7vAXe6P0vfPMoevP3+f7pOyv7uQD7uADsWU7/vQDqPzDqQTPpOCcmpUo3gPQlpEnpLhrpMyHoKBD8wwA8gvT+9vU3qVUYokJDg/s0qUwQoT786ej1sq7zn5rpODf93Zz/+e7914pftnTt9u/g7+Mzqz+PyZz51tTwg3zrUUXrSTzzpqHxkYvudm78zWX+7MqrxPmu17eh0azS6NdAiuJErV/o9OvtZ173wr/62Nb3x8TwiIL+9OD8yVT94Kb8x0v+6sX95LOkwPn936K4zfoNplfM2/u+3sVNi/STtPh1v4Z3v4c3oX7tZFr6wmDsUijwdCn1lR3803vuZC3yhiP3pBbtVyIMcfP7wzZzofbT4PxeqUHcuB6wszJ5rUTGtSmTsDzauB9pmvZ/qPd6qOs/jdU7l649ksI5nJc2pGxTsmpdPQIaAAALTklEQVR4nO2ca3faVhaGhUJMZGwJGUkx0ACeptjBgCENMNixk3bSTBISGM+lM50mmVunmUuH//9xhCRAd87WuUmsvl+6mrWcoyd7n/3uc7MgsFDj/GnzpN8ZXB10e7lcrtfrHlwNOv2T5tPzRoXJF1BT5bzZv5IMTddLJUmWZUVRTMKc+R/zfySppOuaod92Lm4avL80gSrnFwNJ000wCypaimySatpt/2mGMCs3/a6hl7ax+Th1Te5kgrJxcWvokowO58KUdKPXP+dNEKvrvqKVEtG5KLXODW+OCDVOZE0CZGYsZPoiWWl2ieCtIDX5JFVz8rpj4CVnCGTJuEpNtj490CSyeLZkrdfkzbZUU9YJh28jRdcvePNd6CVisy+UsaSd7DKfw8gtjs0SfT6bsdTkwXfT05nwWYx6l7lBNq40ZnxLycaA7ULrxKBWP6MkaU12fOdKiTVfbpmqB6zanI7BNEE3kg0mVfWmRKWBQZN+S382PuMVQFuy9pQuX6PHYwa6pWgdmoBN9iU0qFKXXsHpaLzpLMkapWVVo8s7Q1dS6NTUcy0FGboSjcnY5FtD/Srdkgbsp2MKbiT1yDrjQOdNFJBcIllSb9NSY9wqHZAD7HLs0yIlkQOs9HYeMEUusRZJwNyuA+56BIXurgMe7HiREQZp9EGSgM/S18mQBbxIWy+6FEnAG4M3TYhIAjbStVyyRRJQyO064BVpn1Csa1CWJEmGXLahA3hCsIwqy1tPhnQweNY/uTB10n82uJWN5Y0pECdRwHNSVWZ5C0gJv7nWuGl2rLtTPAAFMhdH5JLW69/E7jZUbk4O0O5xkAUcEJiESsk4aCJtNFSaV9shyQI28a1e1noXgH0U68IRO8AK9vGuZAzAp9LXHSOakSygcIu5YioZ/UTbYJV+FCNhQMwclYx+4p3MCEbCgHg5KhsdrJ3axiDYLBIGxKqjinaLvU17nvMtSkkD4ni9pBM5oO17wkgaUOglzlFFI3Xl5Tq3ySPigBeJ+1GiJ+yDVbUjDpi8zBA+e3YO84gDCv2kZUZ7RvhLrpe3VskDNhKWGcVokv4UoZGTyQMKnWQhVDQqNwe75AEThlCW6Fz/qJC///Tb3/0iCWAuMw/Qnhfv/x6OKBM+UKepx/v5+3+AImYJ8GExn8/fLwIBlewACt/u5y39ERBGRU/V250tKtqA+ft/QkZUjGveXw3Q504ITcTvUAmN1LxMQlHepSKabehcn7NA9aLoRkSyDWnA+6NB+irvEYJtKDLvbwbpYTHvQyzmtjBmqsq468xG8baRrUnorTPrMMbZhtzl/ckwPfcnqWMb0St+I0tWb+qLkCSNtY1Sn/cnAxXOF20bisT7i4H6MjRJbcRQ26D9coW4opLUQgyxDZn8/gJlRfNZCtgGnX0ZigqvpK4w+mxDvuL9xVB9HZOkNqJ3taFlq5sRAj1pmPZdtiETf81BXVuS1A7jxjZoPayipxivcCOubEPp8f5gsMK67jBExzb4PP/HEsI0dGTZhsb7e+FCC6EVRtM2JKqvVKlomxt6EL/L6Vlze0H4Bj2Gpvb/zPt74YprSkP0Le/vhetXIMDil7y/Fy5YCIu4w91lptWIgV22eD3GBLz3/R4rrYZE62hW2v8al7Bwh5EK95whYaW0+DwzhHurNIWV0n1MQIaER2+cIR+DCHGnIUvCJ86Q70Eh/DxDhO+cIWHT8EV2CI8/OEOCSmnxYXYI77y1R4TZIbbfsyQ8skeErCzy+fdZIizYI8IMH7uUsiTcsy3/BaTS7H+RKULb8kEtzf6vM0X40Rpx626wh/CbLBE6TQ3iRpstfDtkGsNXCQjxl78sY2gTghpv7JUFW8InO0/48mfCnwlTT2gvn3a5liYhzJQfOoS73NPY83CH+1KHcIfXFg4haH24n6n1odPT7PAa3+lLYfs02BvCHAh3eK9tz9n0hu2XYls++zU+cM8b2y7Y79PAzi3wiynL3UTneA14jJ8lQmdI4PkhbqlhSHjsDAk8A8btTBmezDjnFlBDxD7HZ3/2BLyLgev5HM4PGd+n4XAGDD3Ix7wTxeEcH1ZMD/N/yQrh+i4GaHVx+FexNsYj/L6QXEcQwsJmUPQYHv7ttajOsQix9ASEuPk51DvCh4d/fy2KYo0f4YdjdL6NWSBvtx2+r4pLlYfcCPcAEXT2MCyhdTWH/3gt2qryArwLInzj+kkEwsPDH1aAuLUmuUDTcFNKBZSJaJrEGlAUW5wIfwRMw9VdE1tbd4UP/ym6xSmIICs9/tH9o9sccWkSHvEJIihJ3YVG2PL+0DEJ/kF8C0nSvTeen41rTc02JqgFB8C7oH5vfUPYVoxfbEzCE8Qpe8J3kBCuru2tFZ2hP4QBiqLKHBDWsm8Wh44i0tRrEh7CNmvCl6Ce1DcNo6qpzyQ8qp8xJoT0M56FhaNQQL9JeDRhCwgLodcNLQW77xCT8Kg8YgkIXDhvdjDWCuy4hZqEN09ZmuInUCG9U7gb/Ct8vWm4SfjEDvAjcO/D7xVLeX5PVKRJeKSya97ewgB9LZsjJJPwqsZqKr4DlZnwJHXXmjiT8KrOprWB5mhokgqbdXC8SfgQWbjiPWAEwyqpJfv3Jm4zCZ/Kp/QJQQvfpXxd91qWYWw3Cb+oI36ChjDE7h093kczCa9o70u9hLVrdzZ3MIJ6XkQyCZ9Uuoiv4KcAR9F/22M0kwhEkWKiJgH0L5xcOqsnATTDeJkiwMg6Y2mmJkOktW+TBNC9mx/UacIginUqO/3vkpzEFT7G/p3thEEUaxROpD6Aq+idOKtwVEtIKJYnhOvNvbdQH7QU2L7wa1ROikh4/+3VHrSTsUMY0ZK6VE1MKNZmxPge/ivhYfjWEArCOHGemq5RI1Rwpqr6788ohTC5Y9hhXBBYbFy2zH/lR/9JgogQQtMxMIJoqj7HrDinbduyHv3mGDwTtxZSW0M8RLXexmA8bddWOfRg8ktoGMPX9kG1sAhxGC83fEs9+i8M8fgT6r8jXhAtxlmCPm7aqvtqwKOfQIixHalHmHlqMdaqI1Agz9pqyKgP/gc4NIzavAhTC6eeriHriyHiomPcFmvhQz54gGwbSE6xFglCU+VatT3dEsrxqFWLwLOEbBuoZcYZNukiIyC1XBNno2mYTZ5NR/NJPY7ORkSzjbiFb5hG+FPRRWli1tXFbN4eWWq3561JuVYrq0i5gmgbMEBCU9EPuhHsJxFsA5ajlogD4mirbYSfVMTrkthUJKEttoHYrvk0TRdirG3sIXu9R0SrDb5ibKOAsqQI0zz5gp+GIm0DahQuUSioOHpQDbWNo0ST0NEiXYihtgHr1gKapA0xaBtHyarMWhg7U1QUsI0EVu/VaeoQvbaRuIy6EVOWqB7bKESeFUKUPsS1bRQAi944pa3crG2jkKAbDdciXdYvOrZBDlAQZulD/OkzUilqq52uHlVc2gaRIrPRMFUrDZHGfSycIxsKonGwfpqikqpSuv8xS0sYy9TufaZkMtYpPhS4TEN/Q/k5y5x3GIlfiQhoDN3sJCuaGboWxzCqIpsHAmORUxNXZ/dSvs0jjOUqyxce1n0JplKZvQxYaVplmqr1GYMb5X4NVWaMtQWnF/KjMhPG2oTDk1WGjLUqR76l6OaqyjV+K00nW8/ik/LVW7x+Q4VP43mdQiDL5Ta1K/IJNCQcyHK9lYL09Oos8tpPArzJkIP9ISj6bhO61HJ9MUpTdvp1NlrUy0kp1XKtPN92iSoNGreXV52AmCadOhuyfuWPofFopi5vPSGxlWu1Vnua5tSM0Ol42G6pdRO0HLwGZf7JkqwuttrDcQbh3LocT4ej9nzWWkyqVVGsVieLVmvebo+G0zHtOfd/FjbfLjzFQ/AAAAAASUVORK5CYII="
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">UI/UX Designer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 10001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Google LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Cochin, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 05/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">31 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Java Developer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 20001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Apple Inc.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Kottayam, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Remote | Full
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 18/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">359 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+    
+    <!--Job Card-->
+    <section class="ml-20 pl-10 items-center justify-evenly place-content-stretch float-left">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">Sr. Linux Admin &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 30001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Netflix Corp.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Pala, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Intern
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 25/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">01 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+    <!--Job Card-->
+    <section class="mr-20 pr-10 items-center justify-evenly place-content-stretch float-right">
+      <div class="max-w-lg min-w-0 mx-auto z-10 justify-start">
+        <div class="flex flex-col">
+          <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+            <div class="flex-none sm:flex">
+              <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="pranav" class=" w-32 h-32 shadow-lg outline-2 rounded-2xl">
+
+              </div>
+              <div class="flex-auto sm:ml-5 justify-evenly">
+                <div class="flex items-center justify-between sm:mt-2">
+                  <div class="flex items-center">
+                    <div class="flex flex-col">
+                      <div class="w-full flex-none text-lg text-gray-800 font-bold leading-none">DevOps Engineer &nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="float-right bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Job ID: 40001</span></div>
+                      <div class="flex-auto text-gray-500 my-1">
+                        <span class="mr-3 ">Meta LLC.</span><span
+                          class="mr-3 border-r border-gray-200  max-h-0"></span><span>Westhill, IND</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row items-center">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                    <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    Office | Part
+                  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span
+                    class="bg-yellow-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Apply
+                    by 28/02/2022</span>
+
+                  <div class="flex-1 inline-flex  hidden items-center">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMiw3LjE3NEMxOC4zMTEsNy4xNzQsNy4xNzQsMTguMzExLDcuMTc0LDMyYzAsMTMuNjg5LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODksMCwyNC44MjYtMTEuMTM3LDI0LjgyNi0yNC44MjYgIEM1Ni44MjYsMTguMzExLDQ1LjY4OSw3LjE3NCwzMiw3LjE3NHogTTM4LjE3NCwzMi44NzRoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTgsMCwxNC4zOThoLTUuOTg1YzAsMCwwLTcuODY4LDAtMTQuMzk4aC0yLjg0NXYtNS4wODggIGgyLjg0NXYtMy4yOTFjMC0yLjM1NywxLjEyLTYuMDQsNi4wNC02LjA0bDQuNDMzLDAuMDE3djQuOTM5YzAsMC0yLjY5NSwwLTMuMjE5LDBjLTAuNTI0LDAtMS4yNjgsMC4yNjItMS4yNjgsMS4zODZ2Mi45OWg0LjU2ICBMMzguMTc0LDMyLjg3NHoiLz48L3N2Zz4=">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU2LjY5MyA1Ni42OTMiIGhlaWdodD0iNTYuNjkzcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOC4zNDgsNS4xNTdjLTEzLjYsMC0yNC42MjUsMTEuMDI3LTI0LjYyNSwyNC42MjVjMCwxMy42LDExLjAyNSwyNC42MjMsMjQuNjI1LDI0LjYyM2MxMy42LDAsMjQuNjIzLTExLjAyMywyNC42MjMtMjQuNjIzICBDNTIuOTcxLDE2LjE4NCw0MS45NDcsNS4xNTcsMjguMzQ4LDUuMTU3eiBNNDAuNzUyLDI0LjgxN2MwLjAxMywwLjI2NiwwLjAxOCwwLjUzMywwLjAxOCwwLjgwM2MwLDguMjAxLTYuMjQyLDE3LjY1Ni0xNy42NTYsMTcuNjU2ICBjLTMuNTA0LDAtNi43NjctMS4wMjctOS41MTMtMi43ODdjMC40ODYsMC4wNTcsMC45NzksMC4wODYsMS40OCwwLjA4NmMyLjkwOCwwLDUuNTg0LTAuOTkyLDcuNzA3LTIuNjU2ICBjLTIuNzE1LTAuMDUxLTUuMDA2LTEuODQ2LTUuNzk2LTQuMzExYzAuMzc4LDAuMDc0LDAuNzY3LDAuMTExLDEuMTY3LDAuMTExYzAuNTY2LDAsMS4xMTQtMC4wNzQsMS42MzUtMC4yMTcgIGMtMi44NC0wLjU3LTQuOTc5LTMuMDgtNC45NzktNi4wODRjMC0wLjAyNywwLTAuMDUzLDAuMDAxLTAuMDhjMC44MzYsMC40NjUsMS43OTMsMC43NDQsMi44MTEsMC43NzcgIGMtMS42NjYtMS4xMTUtMi43NjEtMy4wMTItMi43NjEtNS4xNjZjMC0xLjEzNywwLjMwNi0yLjIwNCwwLjg0LTMuMTJjMy4wNjEsMy43NTQsNy42MzQsNi4yMjUsMTIuNzkyLDYuNDgzICBjLTAuMTA2LTAuNDUzLTAuMTYxLTAuOTI4LTAuMTYxLTEuNDE0YzAtMy40MjYsMi43NzgtNi4yMDUsNi4yMDYtNi4yMDVjMS43ODUsMCwzLjM5NywwLjc1NCw0LjUyOSwxLjk1OSAgYzEuNDE0LTAuMjc3LDIuNzQyLTAuNzk1LDMuOTQxLTEuNTA2Yy0wLjQ2NSwxLjQ1LTEuNDQ4LDIuNjY2LTIuNzMsMy40MzNjMS4yNTctMC4xNSwyLjQ1My0wLjQ4NCwzLjU2NS0wLjk3NyAgQzQzLjAxOCwyMi44NDksNDEuOTY1LDIzLjk0Miw0MC43NTIsMjQuODE3eiIvPjwvc3ZnPg==">
+                    <img class="w-5 h-5"
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNjdweCIgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY3IDY3OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjcgNjciIHdpZHRoPSI2N3B4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNTAuODM3LDQ4LjEzN1YzNi40MjVjMC02LjI3NS0zLjM1LTkuMTk1LTcuODE2LTkuMTk1ICBjLTMuNjA0LDAtNS4yMTksMS45ODMtNi4xMTksMy4zNzRWMjcuNzFoLTYuNzljMC4wOSwxLjkxNywwLDIwLjQyNywwLDIwLjQyN2g2Ljc5VjM2LjcyOWMwLTAuNjA5LDAuMDQ0LTEuMjE5LDAuMjI0LTEuNjU1ICBjMC40OS0xLjIyLDEuNjA3LTIuNDgzLDMuNDgyLTIuNDgzYzIuNDU4LDAsMy40NCwxLjg3MywzLjQ0LDQuNjE4djEwLjkyOUg1MC44Mzd6IE0yMi45NTksMjQuOTIyYzIuMzY3LDAsMy44NDItMS41NywzLjg0Mi0zLjUzMSAgYy0wLjA0NC0yLjAwMy0xLjQ3NS0zLjUyOC0zLjc5Ny0zLjUyOHMtMy44NDEsMS41MjQtMy44NDEsMy41MjhjMCwxLjk2MSwxLjQ3NCwzLjUzMSwzLjc1MywzLjUzMUgyMi45NTl6IE0zNCw2NCAgQzE3LjQzMiw2NCw0LDUwLjU2OCw0LDM0QzQsMTcuNDMxLDE3LjQzMiw0LDM0LDRzMzAsMTMuNDMxLDMwLDMwQzY0LDUwLjU2OCw1MC41NjgsNjQsMzQsNjR6IE0yNi4zNTQsNDguMTM3VjI3LjcxaC02Ljc4OXYyMC40MjcgIEgyNi4zNTR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMTAxOyIvPjwvc3ZnPg==">
+                  </div>
+                </div>
+                <div class="flex pt-2  text-sm text-gray-500">
+                  <div class="flex-1 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                      </path>
+                    </svg>
+                    <p class="">103 Applied! </p>
+                  </div>
+                  <button
+                    class="flex-no-shrink bg-blue-500 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2  hover:border-blue-500 text-white rounded-lg transition ease-in duration-300" type="button" data-modal-toggle="resumeUpload-modal">Apply
+                    Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!--Job Card-->
+
+<!--Pagination-->
+<section class="justify-center items-center ml-80">
+  <nav class="justify-center items-center ml-48 " aria-label="Page navigation example">
+    <ul class="inline-flex items-center -space-x-px">
+      <li>
+        <a href="#"
+          class="block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <span class="sr-only">Previous</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://pranavanand97.github.io/projectC/ViewJobs.html"
+          class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+      </li>
+      <li>
+        <a href="https://pranavanand97.github.io/projectC/viewJobsPage2.html"
+          class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+      </li>
+      <li>
+        <a href="https://pranavanand97.github.io/projectC/ViewJobspage3.html" aria-current="page"
+          class="z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+      </li>
+      <li>
+        <a href="https://pranavanand97.github.io/projectC/viewJobsPage4.html"
+          class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+      </li>
+      <li>
+        <a href="https://pranavanand97.github.io/projectC/viewJobsPage5.html"
+          class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+      </li>
+      <li>
+        <a href="#"
+          class="block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <span class="sr-only">Next</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<!--Pagination-->
+
+                 
+ <!-- footer starts below-->
+ <div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
+  <span class="text-gray-400 inline-flex items-center leading-none text-sm"></span></div>
+
+
+<footer class="bg-white" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-8">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8 ">
+      <div class="space-y-8 xl:col-span-1 bg-gray-80">
+        <a href="https://pranavanand97.github.io/projectC/index.html" class="
+      text-lg
+      font-bold
+      tracking-tighter
+      text-blue-600
+      transition
+      duration-500
+      ease-in-out
+      transform
+      tracking-relaxed
+      lg:pr-8
+    "> WeCanGrowYou &nbsp; | &nbsp; wcgy </a>
+        <p class="w-1/2 mt-2 text-sm text-gray-500"> There is no shortcuts to your Dream Job, Let's Workhard to Grab it Today!</p>
+      </div>
+      <div class="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="
+          text-xs
+          font-semibold
+          tracking-wider
+          text-blue-600
+          uppercase
+        "> We offer </h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li>
+                <a href="https://pranavanand97.github.io/projectC/internships.html" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Internships </a>
+              </li>
+              <li>
+                <a href="https://pranavanand97.github.io/projectC/Parttime.html" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Part-time Jobs </a>
+              </li>
+              <li>
+                <a href="https://pranavanand97.github.io/projectC/FullTime.html" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Full-time Jobs </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-12 md:mt-0">
+            <h3 class="
+          text-xs
+          font-semibold
+          tracking-wider
+          text-blue-600
+          uppercase
+        "> Support </h3>
+            <ul role="list" class="mt-4 space-y-4">
+              <li>
+                <a href="https://doodle.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Book a Call </a>
+              </li>
+              <li>
+                <a href="https://pranavanand97.github.io/projectC/faq.html" class="text-sm font-normal text-gray-500 hover:text-gray-900"> FAQ </a>
+              </li>
+              <li>
+                <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Knock here with iDeas </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hidden lg:justify-end md:grid md:grid-cols-1">
+          <div class="w-full mt-12 md:mt-0">
+            <div class="mt-8 lg:justify-end xl:mt-0">
+              <h3 class="
+            text-xs
+            font-semibold
+            tracking-wider
+            text-blue-600
+            uppercase
+          "> Job Alert Mailer </h3>
+              <p class="mt-4 text-sm text-gray-500 lg:ml-auto"> Sorted Job Alerts, sent to your inbox weekly. </p>
+              <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+                <form  id="submitjob-form"  action="" method="post" id="revue-form" name="revue-form" target="_blank" class="
+              p-1
+              mt-4
+              transition
+              duration-500
+              ease-in-out
+              transform
+              border2
+              bg-gray-50
+              rounded-xl
+              sm:max-w-lg sm:flex
+            ">
+                  <div class="flex-1 min-w-0 revue-form-group">
+                    <label for="member_email" class="sr-only">Email address</label>
+                    <input id="cta-email" type="email" class="
+                  block
+                  w-full
+                  px-5
+                  py-3
+                  text-base text-neutral-600
+                  placeholder-gray-300
+                  transition
+                  duration-500
+                  ease-in-out
+                  transform
+                  bg-transparent
+                  border border-transparent
+                  rounded-md
+                  focus:outline-none
+                  focus:border-transparent
+                  focus:ring-2
+                  focus:ring-white
+                  focus:ring-offset-2
+                  focus:ring-offset-gray-300
+                " placeholder="Enter your email  ">
+                  </div>
+                  <div class="mt-4 sm:mt-0 sm:ml-3 revue-form-actions">
+                    <button type="submit" value="Subscribe" name="member[subscribe]" id="member_submit" class="
+                  block
+                  w-full
+                  px-5
+                  py-3
+                  text-base
+                  font-medium
+                  text-white
+                  bg-blue-600
+                  border border-transparent
+                  rounded-lg
+                  shadow
+                  hover:bg-blue-700
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-white
+                  focus:ring-offset-2
+                  focus:ring-offset-gray-300
+                  sm:px-10
+                "> Notify me </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="
+px-5
+py-12
+mx-auto
+bg-gray-50
+max-w-7xl
+sm:px-6
+md:flex md:items-center md:justify-between
+lg:px-8
+">
+    <div class="flex justify-center mb-8 space-x-6 md:order-last md:mb-0">
+      <a href="#" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">Facebook</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">Instagram</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">Twitter</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">GitHub</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">Discord</span>
+      <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/></svg>
+        
+      </a>
+    </div>
+    <div class="mt-8 md:mt-0 md:order-1">
+      <span class="mt-2 text-sm font-light text-gray-500"> Made with ❤️  &nbsp; by <a href="https://pranavanand97.github.io/projectC/TeamPageDetails.html" class="mx-2 text-wickedblue hover:text-gray-500" 
+        rel="noopener noreferrer"> Team WeCanGrowYou <!--<span style="color: #e25555;">&hearts;</span>--> </a> <a>&#9679;</a>
+        <a href="#" class="mx-2 text-wickedblue hover:text-blue-500" rel="noopener noreferrer"> Click here to grab our Press Kit </a> <a>&#9679;</a>
+        <a href="#" class="mx-2 text-wickedblue hover:text-blue-500" rel="noopener noreferrer"> Privacy Policy & Terms of Use </a><a>&#9679;</a>
+        <a href="#" class="mx-2 text-wickedblue hover:text-blue-500" rel="noopener noreferrer"> Work with Us </a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  $("#job-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycby_v4zGx8HhXaUs7kMhThyHCEi9_9tZvSl-Gs1z/exec",
+          data:$("#job-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+
+<script>
+  $("#submitjob-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbwltnPmRNoxqiiyUByQii4D2da7OfX7mr6hCW1QSA/exec",
+          data:$("#submitjob-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Hurry!! Successfully added your to our Exclusive Job Alert Mail list!")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Oh No! Something went Error, Please try again!")
+
+          }
+      })
+  })
+</script> 
+  
+</body>
+</html>
